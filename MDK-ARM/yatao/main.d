@@ -29,4 +29,15 @@ yatao/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_ll_usb.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_hal_pcd_ex.h \
   ..\Core\Inc\i2c.h ..\Core\Inc\tim.h ..\Core\Inc\usb.h \
-  ..\Core\Inc\gpio.h
+  ..\USBX\App\app_usbx_device.h \
+  ..\Middlewares\ST\usbx\common\core\inc\ux_api.h \
+  ..\Middlewares\ST\usbx\ports\generic\inc\ux_port.h \
+  ..\USBX\App\ux_user.h \
+  ..\Middlewares\ST\usbx\common\core\inc\ux_utility.h \
+  ..\Middlewares\ST\usbx\common\core\inc\ux_system.h \
+  ..\USBX\App\ux_device_cdc_acm.h \
+  ..\Middlewares\ST\usbx\common\usbx_device_classes\inc\ux_device_class_cdc_acm.h \
+  ..\USBX\App\ux_device_descriptors.h ..\USBX\Target\ux_stm32_config.h \
+  ..\Middlewares\ST\usbx\common\usbx_stm32_device_controllers\ux_dcd_stm32.h \
+  ..\Core\Inc\gpio.h ..\Code\Inc\bringup.h ..\Code\Inc\config.h \
+  ..\Code\Inc\tcs34725.h

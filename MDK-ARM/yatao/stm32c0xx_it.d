@@ -28,4 +28,5 @@ yatao/stm32c0xx_it.o: ..\Core\Src\stm32c0xx_it.c ..\Core\Inc\main.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_hal_pcd.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_ll_usb.h \
   ..\Drivers\STM32C0xx_HAL_Driver\Inc\stm32c0xx_hal_pcd_ex.h \
-  ..\Core\Inc\stm32c0xx_it.h
+  ..\Core\Inc\stm32c0xx_it.h ..\Code\Inc\bringup.h ..\Code\Inc\config.h \
+  ..\Core\Inc\tim.h ..\Code\Inc\tcs34725.h ..\Core\Inc\i2c.h

@@ -21,11 +21,12 @@
 #include "i2c.h"
 #include "tim.h"
 #include "usb.h"
+#include "app_usbx_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "bringup.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,14 +94,16 @@ int main(void)
   MX_I2C2_Init();
   MX_TIM1_Init();
   MX_USB_PCD_Init();
+  MX_USBX_Device_Init();
   /* USER CODE BEGIN 2 */
-
+  bringup_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    main_loop();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

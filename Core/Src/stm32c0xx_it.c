@@ -22,6 +22,7 @@
 #include "stm32c0xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "bringup.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -146,7 +147,7 @@ void SysTick_Handler(void)
 void TIM1_BRK_UP_TRG_COM_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_BRK_UP_TRG_COM_IRQn 0 */
-
+  tim1_loop();
   /* USER CODE END TIM1_BRK_UP_TRG_COM_IRQn 0 */
   HAL_TIM_IRQHandler(&htim1);
   /* USER CODE BEGIN TIM1_BRK_UP_TRG_COM_IRQn 1 */
