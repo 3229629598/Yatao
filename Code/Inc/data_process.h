@@ -1,14 +1,14 @@
 #ifndef data_process_h
 #define data_process_h
 
-#include "ux_device_cdc_acm.h"
-#include "app_usbx_device.h"
+#include "usb.h"
 #include "tcs34725.h"
 #include "crc.h"
+#include "string.h"
 
 #define usb_tx_header 0x5a
 
-typedef __packed struct
+typedef struct __attribute__((packed))
 {
     uint8_t header;
     tcs34725_rgb rbg_data[2];

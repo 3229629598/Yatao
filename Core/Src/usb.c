@@ -21,7 +21,8 @@
 #include "usb.h"
 
 /* USER CODE BEGIN 0 */
-
+USBD_HandleTypeDef hUsbDeviceFS;
+extern USBD_DescriptorsTypeDef Class_Desc;
 /* USER CODE END 0 */
 
 PCD_HandleTypeDef hpcd_USB_DRD_FS;
@@ -32,7 +33,7 @@ void MX_USB_PCD_Init(void)
 {
 
   /* USER CODE BEGIN USB_Init 0 */
-
+  hpcd_USB_DRD_FS.pData = &hUsbDeviceFS;
   /* USER CODE END USB_Init 0 */
 
   /* USER CODE BEGIN USB_Init 1 */
@@ -54,7 +55,17 @@ void MX_USB_PCD_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USB_Init 2 */
+  if(USBD_Init(&hUsbDeviceFS, &Class_Desc, 0) != USBD_OK)
+    Error_Handler();
 
+  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK)
+    Error_Handler();
+
+  if(USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_CDC_Template_fops) != USBD_OK)
+    Error_Handler();
+
+  if(USBD_Start(&hUsbDeviceFS) != USBD_OK)
+    Error_Handler();
   /* USER CODE END USB_Init 2 */
 
 }
@@ -80,6 +91,10 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
 
     /* USB_DRD_FS clock enable */
     __HAL_RCC_USB_CLK_ENABLE();
+
+    /* USB_DRD_FS interrupt Init */
+    HAL_NVIC_SetPriority(USB_DRD_FS_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(USB_DRD_FS_IRQn);
   /* USER CODE BEGIN USB_DRD_FS_MspInit 1 */
 
   /* USER CODE END USB_DRD_FS_MspInit 1 */
@@ -96,6 +111,9 @@ void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
   /* USER CODE END USB_DRD_FS_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_USB_CLK_DISABLE();
+
+    /* USB_DRD_FS interrupt Deinit */
+    HAL_NVIC_DisableIRQ(USB_DRD_FS_IRQn);
   /* USER CODE BEGIN USB_DRD_FS_MspDeInit 1 */
 
   /* USER CODE END USB_DRD_FS_MspDeInit 1 */

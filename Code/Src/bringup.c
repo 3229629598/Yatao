@@ -3,6 +3,7 @@
 void bringup_init(void)
 {
     tcs34725_init();
+    data_process_init();
     HAL_Delay(10);
     HAL_TIM_Base_Start_IT(&htim1);
 }
@@ -10,6 +11,7 @@ void bringup_init(void)
 void tim1_loop(void)
 {
     tcs34725_loop();
+    data_process_loop();
 }
 
 void main_loop(void)

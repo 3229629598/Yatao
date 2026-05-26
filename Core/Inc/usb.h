@@ -29,13 +29,14 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "usbd_core.h"
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 extern PCD_HandleTypeDef hpcd_USB_DRD_FS;
 
 /* USER CODE BEGIN Private defines */
-
+extern USBD_HandleTypeDef hUsbDeviceFS;
 /* USER CODE END Private defines */
 
 void MX_USB_PCD_Init(void);
