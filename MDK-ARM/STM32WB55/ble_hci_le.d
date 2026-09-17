@@ -1,0 +1,10 @@
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.c
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/auto/ble_hci_le.h
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h
+stm32wb55\ble_hci_le.o: C:\Users\3229629598\AppData\Local\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h
+stm32wb55\ble_hci_le.o: C:\Users\3229629598\AppData\Local\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/ble_std.h
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/ble_defs.h
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/template/osal.h
+stm32wb55\ble_hci_le.o: ../Middlewares/ST/STM32_WPAN/ble/core/template/compiler.h
