@@ -3,6 +3,7 @@
 uint32_t last_time1, last_time2;
 uint8_t ble_data[2];
 uint8_t led_enable = 0;
+static const uint32_t OtaTagPadding __attribute__((section("OTA_PAD"), used)) = 0xFFFFFFFFu;
 
 void bringup_init(void)
 {
