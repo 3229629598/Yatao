@@ -888,49 +888,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Utilities</GroupName>
-          <Files>
-            <File>
-              <FileName>stm32_lpm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Utilities/lpm/tiny_lpm/stm32_lpm.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32_seq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Utilities/sequencer/stm32_seq.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Apps</GroupName>
-          <Files>
-            <File>
-              <FileName>bringup.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Code\Src\bringup.c</FilePath>
-            </File>
-            <File>
-              <FileName>data_process.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Code\Src\data_process.c</FilePath>
-            </File>
-            <File>
-              <FileName>tca9548a.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Code\Src\tca9548a.c</FilePath>
-            </File>
-            <File>
-              <FileName>tcs34725.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Code\Src\tcs34725.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Middlewares/STM32_WPAN</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -2011,6 +1968,49 @@
               </FileOption>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>Utilities</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32_lpm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Utilities/lpm/tiny_lpm/stm32_lpm.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32_seq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Utilities/sequencer/stm32_seq.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Apps</GroupName>
+          <Files>
+            <File>
+              <FileName>bringup.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Code\Src\bringup.c</FilePath>
+            </File>
+            <File>
+              <FileName>data_process.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Code\Src\data_process.c</FilePath>
+            </File>
+            <File>
+              <FileName>tca9548a.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Code\Src\tca9548a.c</FilePath>
+            </File>
+            <File>
+              <FileName>tcs34725.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Code\Src\tcs34725.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>

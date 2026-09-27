@@ -1,2 +1,4 @@
+.vscode/
+BLEClient/__pycache__/
 MDK-ARM/.vscode/
 MDK-ARM/STM32WB55/

@@ -2,6 +2,7 @@
 
 uint32_t last_time1, last_time2;
 uint8_t ble_data[2];
+uint8_t led_enable = 0;
 
 void bringup_init(void)
 {
@@ -21,18 +22,20 @@ void main_loop(void)
 		last_time1 = HAL_GetTick();
 		i2c_rgb_update(); 
 	}
-//	if(HAL_GetTick() - last_time2 >= 1000)
-//	{
-//		last_time2 = HAL_GetTick();
-//		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-//	}
+	if(HAL_GetTick() - last_time2 >= 2000)
+	{
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+		led_enable = 0;
+	}
 }
 
 void p2ps_stm_write_evt(P2PS_STM_App_Notification_evt_t *pNotification)
 {
-	if(pNotification->DataTransfered.pPayload[0] == 0x01)
+	if(pNotification->DataTransfered.pPayload[0] == 0x01 && led_enable == 0)
 	{
-		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+		last_time2 = HAL_GetTick();
+		HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+		led_enable = 1;
 	}
 	else if(pNotification->DataTransfered.pPayload[0] == 0x02)
 	{
