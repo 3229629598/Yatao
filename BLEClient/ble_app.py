@@ -91,6 +91,8 @@ async def main():
             print(f"\n📥 收到数据: {[list(row) for row in rgb_data]}")
             flags.value = 0
             print("\n请输入要发送的数据: ", end="", flush=True)
+        if packet[0] == 11:
+            flags.value = 0
         # print(f"\n📥 收到 STM32 回复: {packet.hex(' ')}  (长度 {len(packet)})")
         # print("请输入要发送的数据（直接回车退出）: ", end="", flush=True)
 
