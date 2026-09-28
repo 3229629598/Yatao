@@ -65,7 +65,12 @@ void P2PS_STM_App_Notification(P2PS_STM_App_Notification_evt_t *pNotification)
   switch(pNotification->P2P_Evt_Opcode)
   {
 /* USER CODE BEGIN P2PS_STM_App_Notification_P2P_Evt_Opcode */
-
+#if(BLE_CFG_OTA_REBOOT_CHAR != 0)
+    case P2PS_STM_BOOT_REQUEST_EVT:
+      *(uint32_t*)SRAM1_BASE = *(uint32_t*)pNotification->DataTransfered.pPayload;
+      NVIC_SystemReset();
+      break;
+#endif
 /* USER CODE END P2PS_STM_App_Notification_P2P_Evt_Opcode */
 
     case P2PS_STM__NOTIFY_ENABLED_EVT:
