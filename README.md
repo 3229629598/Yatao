@@ -24,8 +24,4 @@ https://blog.csdn.net/data_i/article/details/148493746?fromshare=blogdetail&shar
 6、生成 .bin 格式的可执行文件进行OTA
 
 # 蓝牙客户端：
-安装依赖
-```
-pip3 install -r requirements.txt
-```
-运行 ble_app.py 启动蓝牙客户端
+cmd终端在python环境中运行 launch.bat
