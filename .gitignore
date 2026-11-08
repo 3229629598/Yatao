@@ -1,0 +1,4 @@
+.vscode/
+__pycache__/
+MDK-ARM/STM32WB55/
+data_*.xlsx
